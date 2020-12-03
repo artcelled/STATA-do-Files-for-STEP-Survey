@@ -1,5 +1,7 @@
 # STATA-do-Files-for-STEP-Survey
 NCD Researches, GATS , NNS 
+
+
 ************Wealth quintile
 gen wi_flus_elec=cex1a=="Yes"
 gen wi_flus_toi=cex1b=="Yes"
@@ -388,8 +390,6 @@ mlogit tobacco m8sex residence ib4.income_cat ib4.edu_cat ib1. occu_cat ib5.weal
 codebook bmi_cat
 mlogit tobacco m8sex residence ib4.income_cat ib4.edu_cat ib1. occu_cat ib5.wealth_quint ib1.bmi_cat,rrr
 mlogit bmi_cat tobacco m8sex residence ib4.income_cat ib4.edu_cat ib1. occu_cat ib5.wealth_quint,rrr
-save "C:\Users\artce\Documents\SLP Important\Sacred files\SHASTO_JICA_Data_20201130_SLP main.dta", replace
-log close
 recode bmi_cat (2 = 0 "fatty") (1 0 = 1 "Underweight"), gen (fatty_cat)
 logistic fatty_cat tobacco m8sex residence ib4.income_cat ib4.edu_cat ib1. occu_cat ib5.wealth_quint ib2.bmi_cat
 logistic fatty_cat tobacco m8sex residence ib4.income_cat ib4.edu_cat ib1. occu_cat ib5.wealth_quint
